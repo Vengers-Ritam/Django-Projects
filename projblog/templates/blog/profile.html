@@ -1,0 +1,18 @@
+{% extends 'blog/base.html' %}
+{% block title %}
+Timeline
+{% endblock %}
+{% block body %}
+<div class="container col-sm-4">
+    <form action="" method="POST">
+        {% csrf_token %}
+        {% for fm in form %}
+        <div class="form-group">
+            {{fm.label_tag}}{{fm}}{{fm.errors|striptags}}<br>
+        </div>
+        {% endfor %}
+        <input type="submit" class='btn btn-success' value="Update">
+        <a href="{% url 'changepassword' %}" class='btn btn-primary'>Change Password</a>
+</div>
+</form>
+{% endblock %}

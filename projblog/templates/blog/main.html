@@ -1,0 +1,20 @@
+{% extends 'blog/base.html' %}
+{% block title %}
+Timeline
+{% endblock %}
+{% block body %}
+<div class="container col-sm-8"><br>
+    <h3>Welcome</h3><br>
+    {% for fm in form %}
+    <div class="card mb-3">
+        <h6>{{fname}} {{lname}}</h6>
+        <img src="{{fm.img.url}}" class="card-img-top" alt="Sry Image Is Not Supported">
+        <div class="card-body">
+            <h5 class="card-title">{{fm.title}}</h5>
+            <p class="card-text">{{fm.desc}}</p>
+            <p class="card-text"><small class="text-muted">{{fm.date}}</small></p>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

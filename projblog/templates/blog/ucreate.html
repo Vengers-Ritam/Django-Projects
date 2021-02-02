@@ -1,0 +1,17 @@
+{% extends 'blog/base.html' %}
+{% block title %}
+Registration Form
+{% endblock %}
+{% block body %}
+<div class='container col-sm-4'>
+    <form action="" method="POST">
+        {% csrf_token %}
+        {% for fm in form %}
+        <div class="form-group">
+            {{fm.label_tag}}{{fm}}{{fm.errors|striptags}}<br>
+        </div>
+        {% endfor %}
+        <input type="submit" class='btn btn-primary' value="Signup">
+    </form>
+</div>
+{% endblock %}

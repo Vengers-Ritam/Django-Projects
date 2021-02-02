@@ -1,0 +1,15 @@
+{% extends 'blog/base.html' %}
+{% block title %}
+Timeline
+{% endblock %}
+{% block body %}
+<div class="container col-sm-4">
+    <form action="" method="POST">
+        {% csrf_token %}
+        <div class='form group'>
+            {{form.as_p}}
+        </div>
+        <input type="submit" class="btn btn-success" value="Submit">
+    </form>
+</div>
+{% endblock %}
